@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0df4e752ee89dcf41ac06a9f5fdbb4a0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Get Schwifty
+  fontNames:
+  - Get Schwifty
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a7a87fc5871e5f94bac699c6b9270ae3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
