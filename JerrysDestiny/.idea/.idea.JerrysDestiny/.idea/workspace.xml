@@ -11,12 +11,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/GraphicsButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FilmGrain.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/FilmGrain.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/GraphicsButton.cs" />
       </list>
     </option>
   </component>
@@ -57,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609855410513</updated>
       <workItem from="1609855416002" duration="709000" />
+      <workItem from="1609967558443" duration="567000" />
     </task>
     <servers />
   </component>
@@ -67,5 +70,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1609967910310">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1609967910310" />
   </component>
 </project>
