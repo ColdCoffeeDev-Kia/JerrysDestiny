@@ -41,7 +41,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void Apply()
     {
-        WriteGraphics(Brightness.value * 100, Volume.value * 100, Graphics.Fancy);
+        WriteGraphics(Brightness.value, Volume.value * 100, Graphics.Fancy);
         Back();
     }
 
@@ -49,6 +49,7 @@ public class OptionsMenu : MonoBehaviour
     {
         //GameObject.FindWithTag("Settings").SetActive(true);
         EntirePanel.SetActive(true);
+        ReadGraphics();
     }
 
     private void Update()
@@ -65,31 +66,24 @@ public class OptionsMenu : MonoBehaviour
     {
         if (Readable)
         {
-            try
+            StreamReader sr = new StreamReader(path);
+            string st = sr.ReadToEnd();
+            sr.Dispose();
+            string[] Splitted = st.Split('\\');
+            if (Splitted.Length == 3)
             {
-                StreamReader sr = new StreamReader(path);
-                string st = sr.ReadToEnd();
-                sr.Dispose();
-                string[] Splitted = st.Split('\\');
-                if (Splitted.Length == 3)
+                Screen.brightness = float.Parse(Splitted[0]);
+                Brightness.value = Screen.brightness;
+                AudioListener.volume = float.Parse(Splitted[1]) / 100f;
+                Volume.value = AudioListener.volume;
+                if (Splitted[2] == "0")
                 {
-                    Screen.brightness = float.Parse(Splitted[0]) / 100f;
-                    Brightness.value = Screen.brightness;
-                    AudioListener.volume = float.Parse(Splitted[1]) / 100f;
-                    Volume.value = AudioListener.volume;
-                    if (Splitted[2] == "0")
-                    {
-                        GraphicsFancy = false;
-                    }
-                    else
-                    {
-                        GraphicsFancy = true;
-                    }
+                    GraphicsFancy = false;
                 }
-            }
-            catch
-            {
-
+                else
+                {
+                    GraphicsFancy = true;
+                }
             }
         }
     }
@@ -108,19 +102,21 @@ public class OptionsMenu : MonoBehaviour
             if (File.Exists(path))
             {
                 File.Delete(path);
-                StreamWriter sw = File.CreateText(path);
-                sw.Write(Brightness.ToString() + "\\" + Volume.ToString() + "\\" + (GoodGraphs ? "1" : "0"));
             }
+            StreamWriter sw = File.CreateText(path);
+            sw.Write(Brightness.ToString() + "\\" + Volume.ToString() + "\\" + (GoodGraphs ? "1" : "0"));
+            sw.Dispose();
         }
         catch
         {
-
+            Debug.Log("WTF");
         }
         finally
         {
             Readable = true;
             ReadGraphics();
         }
+        Readable = true;
     }
     
     #endregion
